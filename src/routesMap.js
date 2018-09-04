@@ -3,6 +3,20 @@ import { fetchData } from './utils'
 
 export default {
   HOME: '/',
+  CARDS: {
+    path: '/cards',
+    thunk: async (dispatch, getState) => {
+      const { jwToken, cards: cardsInState } = getState()
+      if (!cardsInState) return
+      const { cards } = await fetchData('/api/cards', jwToken)
+
+      if (cards.length === 0) {
+        return dispatch({ type: NOT_FOUND })
+      }
+
+      dispatch({ type: 'CARDS_FETCHED', payload: { cards } })
+    }
+  },
   LIST: {
     path: '/list/:category',
     thunk: async (dispatch, getState) => {

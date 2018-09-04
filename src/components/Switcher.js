@@ -14,7 +14,7 @@ const UniversalComponent = universal(({ page }) => import(`./${page}`), {
   error: Err
 })
 
-const Switcher = ({ page, direction, isLoading }) =>
+const Switcher = ({ page, direction, isLoading }) => (
   <TransitionGroup
     className={`${styles.switcher} ${direction}`}
     duration={500}
@@ -24,6 +24,7 @@ const Switcher = ({ page, direction, isLoading }) =>
       <UniversalComponent page={page} isLoading={isLoading} />
     </Transition>
   </TransitionGroup>
+)
 
 const mapState = ({ page, direction, ...state }) => ({
   page,
