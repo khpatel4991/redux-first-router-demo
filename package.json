@@ -16,7 +16,6 @@
     "clean": "rimraf buildClient buildServer",
     "cm": "git-cz",
     "lint": "eslint --fix __tests__ server src webpack",
-    "precommit": "yarn format",
     "format": "pretty-quick --staged && yarn lint"
   },
   "dependencies": {
