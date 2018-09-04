@@ -16,7 +16,7 @@ export default ({ clientStats }) => async (req, res) => {
   const chunkNames = flushChunkNames()
   const { js, styles, cssHash } = flushChunks(clientStats, { chunkNames })
 
-  console.info('REQUESTED PATH:', req.path)
+  console.info('REQUESTED PATH:', req.url)
   console.info('CHUNK NAMES', chunkNames)
 
   res.end(`<!doctype html>
