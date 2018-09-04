@@ -1,7 +1,6 @@
 import 'babel-polyfill'
-import express from 'express'
 import fastify from 'fastify'
-// import fastifyStatic from 'fastify-static'
+import fastifyStatic from 'fastify-static'
 // import fastifyJwt from 'fastify-jwt'
 // import fp from 'fastify-plugin'
 import fastifyCookie from 'fastify-cookie'
@@ -48,10 +47,17 @@ else {
   const clientStats = require('../buildClient/stats.json') // eslint-disable-line import/no-unresolved
   const serverRender = require('../buildServer/main.js').default // eslint-disable-line import/no-unresolved
 
-  app.use(publicPath, express.static(outputPath))
+  app.register(fastifyStatic, {
+    root: outputPath,
+    prefix: '/static/'
+  })
+  // app.use(publicPath, express.static(outputPath))
   app.use(serverRender({ clientStats, outputPath }))
 }
 
-app.listen(3000, () => {
+app.listen(3000, err => {
+  if (err) {
+    console.info('Error starting server', err.message)
+  }
   app.log.info('Listening @ http://localhost:3000/')
 })
