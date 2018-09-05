@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 import fastify from 'fastify'
 import fastifyStatic from 'fastify-static'
+import fastifyCompress from 'fastify-compress'
 // import fastifyJwt from 'fastify-jwt'
 // import fp from 'fastify-plugin'
 import fastifyCookie from 'fastify-cookie'
@@ -13,7 +14,11 @@ import serverConfig from '../webpack/server.dev'
 
 const DEV = process.env.NODE_ENV === 'development'
 const { publicPath, path: outputPath } = clientConfig.output
-const app = fastify()
+const app = fastify({
+  logger: {
+    prettyPrint: { colorize: true, forceColor: true }
+  }
+})
 
 // JWTOKEN COOKIE - in a real app obviously you set this after signup/login:
 
@@ -46,13 +51,12 @@ if (DEV) {
 else {
   const clientStats = require('../buildClient/stats.json') // eslint-disable-line import/no-unresolved
   const serverRender = require('../buildServer/main.js').default // eslint-disable-line import/no-unresolved
-
+  app.register(fastifyCompress, { threshold: 0 })
+  app.use(serverRender({ clientStats, outputPath }))
   app.register(fastifyStatic, {
     root: outputPath,
     prefix: '/static/'
   })
-  // app.use(publicPath, express.static(outputPath))
-  app.use(serverRender({ clientStats, outputPath }))
 }
 
 app.listen(3000, err => {

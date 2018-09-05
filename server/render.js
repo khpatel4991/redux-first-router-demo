@@ -6,10 +6,12 @@ import flushChunks from 'webpack-flush-chunks'
 import configureStore from './configureStore'
 import App from '../src/components/App'
 
-export default ({ clientStats }) => async (req, res) => {
+export default ({ clientStats }) => async (req, res, next) => {
+  if (/\/static\//.test(req.url)) {
+    return next()
+  }
   const store = await configureStore(req, res)
   if (!store) return // no store means redirect was already served
-
   const app = createApp(App, store)
   const appString = ReactDOM.renderToString(app)
   const stateJson = JSON.stringify(store.getState())

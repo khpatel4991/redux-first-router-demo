@@ -2710,6 +2710,15 @@ fastfall@^1.5.0:
   dependencies:
     reusify "^1.0.0"
 
+fastify-compress@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-0.6.0.tgz#8dfa03b75582b6170d9a6ca53c0d442d3e2727c1"
+  dependencies:
+    fastify-plugin "^1.0.0"
+    mime-db "^1.33.0"
+    pump "^3.0.0"
+    string-to-stream "^1.1.0"
+
 fastify-cookie@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fastify-cookie/-/fastify-cookie-2.0.1.tgz#b1221f1bd2b489fc58d8d50f30aac65a1ccfb875"
@@ -2731,7 +2740,7 @@ fastify-plugin@^0.2.2:
   dependencies:
     semver "^5.4.1"
 
-fastify-plugin@^1.0.1, fastify-plugin@^1.2.0:
+fastify-plugin@^1.0.0, fastify-plugin@^1.0.1, fastify-plugin@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-1.2.0.tgz#b87274ad9d14e41efcd3240c64f5dee4c39b2154"
   dependencies:
@@ -4697,6 +4706,10 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
+mime-db@^1.33.0:
+  version "1.36.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.36.0.tgz#5020478db3c7fe93aad7bbcc4dcf869c43363397"
+
 mime-db@~1.30.0:
   version "1.30.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.30.0.tgz#74c643da2dd9d6a45399963465b26d5ca7d71f01"
@@ -5892,7 +5905,7 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.1.5:
+readable-stream@^2.1.0, readable-stream@^2.1.5:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
@@ -6775,6 +6788,13 @@ string-length@^2.0.0:
   dependencies:
     astral-regex "^1.0.0"
     strip-ansi "^4.0.0"
+
+string-to-stream@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/string-to-stream/-/string-to-stream-1.1.1.tgz#aba78f73e70661b130ee3e1c0192be4fef6cb599"
+  dependencies:
+    inherits "^2.0.1"
+    readable-stream "^2.1.0"
 
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
