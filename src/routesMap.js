@@ -17,6 +17,17 @@ export default {
       dispatch({ type: 'CARDS_FETCHED', payload: { cards } })
     }
   },
+  PROFILE: {
+    path: '/profile/:playerName',
+    thunk: async (dispatch, getState) => {
+      const { location: { payload: { playerName } } } = getState()
+      const { profile } = await fetchData(`/api/profile/${playerName}`)
+      if (!profile) {
+        return dispatch({ type: NOT_FOUND })
+      }
+      dispatch({ type: 'PROFILE_FOUND', payload: { profile } })
+    }
+  },
   LIST: {
     path: '/list/:category',
     thunk: async (dispatch, getState) => {

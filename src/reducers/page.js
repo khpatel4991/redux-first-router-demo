@@ -9,6 +9,7 @@ const components = {
   ADMIN: 'Admin',
   LOGIN: 'Login',
   CARDS: 'Cards',
+  PROFILE: 'Profile',
   [NOT_FOUND]: 'NotFound'
 }
 

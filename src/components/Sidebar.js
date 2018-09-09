@@ -31,6 +31,13 @@ const Sidebar = ({ onClick, path }) => (
       FP
     </NavLink>
 
+    <NavLink
+      activeClassName={styles.active}
+      to={{ type: 'PROFILE', payload: { playerName: 'kashyap' } }}
+    >
+      Kashyap Profile
+    </NavLink>
+
     <div style={{ height: 20 }} />
     <h2>EVENT HANDLERS</h2>
 
@@ -78,10 +85,20 @@ const Sidebar = ({ onClick, path }) => (
       role='link'
       tabIndex='0'
       className={active(path, '/list/fp')}
-      onClick={() => onClick('LIST', 'react-redux')}
-      onKeyPress={() => onClick('LIST', 'react-redux')}
+      onClick={() => onClick('LIST', 'fp')}
+      onKeyPress={() => onClick('LIST', 'fp')}
     >
       FP
+    </span>
+
+    <span
+      role='link'
+      tabIndex='0'
+      className={active(path, '/profile/kashyap')}
+      onClick={() => onClick('PROFILE', 'kashyap')}
+      onKeyPress={() => onClick('PROFILE', 'kashyap')}
+    >
+      Kashyap Profile
     </span>
 
     <div style={{ height: 14 }} />
