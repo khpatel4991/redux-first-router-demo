@@ -7,7 +7,7 @@ const components = {
   LIST: 'List',
   VIDEO: 'Video',
   ADMIN: 'Admin',
-  LOGIN: 'Login',
+  SIGNIN: 'Signin',
   CARDS: 'Cards',
   PROFILE: 'Profile',
   [NOT_FOUND]: 'NotFound'

@@ -33,7 +33,7 @@ const Sidebar = ({ onClick, path }) => (
 
     <NavLink
       activeClassName={styles.active}
-      to={{ type: 'PROFILE', payload: { playerName: 'kashyap' } }}
+      to={{ type: 'PROFILE', payload: { playerName: 'khpatel4991' } }}
     >
       Kashyap Profile
     </NavLink>
@@ -94,9 +94,9 @@ const Sidebar = ({ onClick, path }) => (
     <span
       role='link'
       tabIndex='0'
-      className={active(path, '/profile/kashyap')}
-      onClick={() => onClick('PROFILE', 'kashyap')}
-      onKeyPress={() => onClick('PROFILE', 'kashyap')}
+      className={active(path, '/profile/khpatel4991')}
+      onClick={() => onClick('PROFILE', 'khpatel4991')}
+      onKeyPress={() => onClick('PROFILE', 'khpatel4991')}
     >
       Kashyap Profile
     </span>
