@@ -2772,9 +2772,9 @@ fastfall@^1.5.0:
   dependencies:
     reusify "^1.0.0"
 
-fastify-compress@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-0.6.0.tgz#8dfa03b75582b6170d9a6ca53c0d442d3e2727c1"
+fastify-compress@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-0.7.0.tgz#0c14e8e6986d364b9a04723fee45e6fcba5ecc53"
   dependencies:
     fastify-plugin "^1.0.0"
     mime-db "^1.33.0"
@@ -2783,7 +2783,7 @@ fastify-compress@^0.6.0:
 
 fastify-cookie@^2.0.1:
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/fastify-cookie/-/fastify-cookie-2.0.1.tgz#b1221f1bd2b489fc58d8d50f30aac65a1ccfb875"
+  resolved "http://registry.npmjs.org/fastify-cookie/-/fastify-cookie-2.0.1.tgz#b1221f1bd2b489fc58d8d50f30aac65a1ccfb875"
   dependencies:
     cookie "^0.3.1"
     fastify-plugin "^0.2.2"
@@ -2816,9 +2816,9 @@ fastify-static@^0.14.0:
     readable-stream "^3.0.0"
     send "^0.16.0"
 
-fastify@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-1.11.1.tgz#b8fb1817932adf13d57e4a5370b8df0bc0c979a0"
+fastify@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-1.11.2.tgz#7495c8134e21e13dccd6bc6b5d036f187faa276e"
   dependencies:
     "@types/pino" "^4.16.0"
     abstract-logging "^1.0.0"
